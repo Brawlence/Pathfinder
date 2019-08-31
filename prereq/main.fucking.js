@@ -8,6 +8,7 @@ var r = document.getElementById("rbw"),
   classMethods = ["remove", "add"],
   rainbowTiming = 1000 / 25;
 
+// Rainbow shifting text
 function doThatFuckingColorThing() {
   var color = "hsl(" + currentHue + ", 80%, 60%)",
     nextHue = currentHue + hueAddition;
