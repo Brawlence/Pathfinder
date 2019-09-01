@@ -1,4 +1,4 @@
-﻿# Pathfinder
+﻿# [Pathfinder](https://github.com/Brawlence/Pathfinder)
 
 [ВНИМАНИЕ! ГОТОВ ШАБЛОН ДЛЯ САЙТА!](template.html)
 
