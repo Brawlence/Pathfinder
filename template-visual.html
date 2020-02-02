@@ -52,21 +52,17 @@
         </div>
         <p>Сайт свиснут с the best motherfucking website, ибо у того лицензия <a href="http://www.wtfpl.net/">WTFPL</a>. <span class="citneed">Cit. needed</span></p>
 
-        <!-- Это часть управления - две кнопочки будут сверху справа, они цепляются скриптом-->
-        <div id="contrast">Добавить контраста</div>
-        <div id="invmode">Ночной режим</div>
         <script>
             var scriptSrc = [
-                "js/main_script.js",
+                "./prereq/main_script.js",
             ];
-            for (var i_2 = 0; i_2 < scriptSrc.length; i_2++) {
-                var index = scriptSrc[i_2];
+            for (var j = 0; j < scriptSrc.length; j++) {
+                var index = scriptSrc[j];
                 var script = document.body.appendChild(document.createElement('script'));
                 script.async = false;
                 script.src = index;
             }
         </script>
-        <script src="./prereq/main_script.js"></script>
         <!-- 
           Implement tracking if needed with the following 
           (https://github.com/matomo-org/matomo/blob/master/js/piwik.js):

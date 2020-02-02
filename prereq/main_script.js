@@ -1,27 +1,30 @@
 "use strict";
-// I wish I could have used ES6 extravaganza, but not everyone supports it :(
+
 var r = document.getElementById("rbw"),
     currentHue = 0,
     hueAddition = 5,
+    rainbowTiming = 1000 / 25,
     documentElement = document.getElementsByTagName("html")[0],
     clickEvent = "ontouchstart" in window ? "touchend" : "click",
-    classMethods = ["remove", "add"],
-    rainbowTiming = 1000 / 25;
+    classMethods = ["remove", "add"],    
+    stringArray = [ "Добавить контраста",
+                    "Убрать контраст",
+                    "Ночной режим",
+                    "Обычный режим" ];
 
-// Rainbow shifting text
-function doThatFuckingColorThing() {
-    var color = "hsl(" + currentHue + ", 80%, 60%)",
-        nextHue = currentHue + hueAddition;
-    currentHue = nextHue > 360 ? 0 : nextHue;
-    r.style.color = color;
-    setTimeout(doThatFuckingColorThing, rainbowTiming);
+function createControls() {
+    var contrastDiv = document.createElement('div');
+        contrastDiv.id = "contrast";
+        contrastDiv.innerText = stringArray[0];
+
+    var nightmodeDiv = document.createElement('div');
+        nightmodeDiv.id = "invmode";
+        nightmodeDiv.innerText = stringArray[2];
+    document.body.appendChild(contrastDiv);
+    document.body.appendChild(nightmodeDiv);
 }
 
 function someControl(id, textArr, className) {
-    /* You see? No fucking jQuery needed, check:
-     * http://www.vanilla-js.com/
-     * http://jsperf.com/getelementbyid-vs-jquery-id/44
-     */
     var el = document.getElementsByTagName("html")[0];
     var acbox = document.getElementById(id),
         textNode = acbox.firstChild,
@@ -37,17 +40,25 @@ function someControl(id, textArr, className) {
     );
 }
 
+// Rainbow shifting text
+function doThatFuckingColorThing() {
+    var color = "hsl(" + currentHue + ", 80%, 60%)",
+        nextHue = currentHue + hueAddition;
+    currentHue = nextHue > 360 ? 0 : nextHue;
+    r.style.color = color;
+    setTimeout(doThatFuckingColorThing, rainbowTiming);
+}
+
 function addContrastControl() {
-    someControl(
-        "contrast", ["Добавить контраста", "Убрать контраст"],
-        "contrast"
-    );
+    someControl("contrast", [stringArray[0], stringArray[1]],"contrast");
 }
 
 function addInvertedControl() {
-    someControl("invmode", ["Ночной режим", "Обычный режим"], "inverted");
+    someControl("invmode", [stringArray[2], stringArray[3]], "inverted");
 }
 
-doThatFuckingColorThing();
+createControls();
+
 addContrastControl();
 addInvertedControl();
+doThatFuckingColorThing();

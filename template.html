@@ -43,12 +43,9 @@
         </div>
         <p><span class="citneed">Cit. needed</span></p>
 
-        <!-- Это часть управления - две кнопочки будут сверху справа, они цепляются скриптом-->
-        <div id="contrast">Добавить контраста</div>
-        <div id="invmode">Ночной режим</div>
         <script>
             var scriptSrc = [
-                "js/main_script.js",
+                "./prereq/main_script.js",
             ];
             for (var i_2 = 0; i_2 < scriptSrc.length; i_2++) {
                 var index = scriptSrc[i_2];
@@ -57,7 +54,6 @@
                 script.src = index;
             }
         </script>
-        <script src="./prereq/main_script.js"></script>
 </body>
 
 </html>
