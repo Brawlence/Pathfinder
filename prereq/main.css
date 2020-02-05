@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: Open Sans, Arial;
+    font-family: 'Open Sans', sans-serif;
     color: #454545;
     font-size: 16px;
     margin: 2em auto;
@@ -11,6 +11,22 @@ body {
     padding: 1em;
     line-height: 1.4;
     text-align: justify
+}
+
+html.serif body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+html.serif div#serif {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+html.contrast body {
+    color: #050505
 }
 
 html.contrast body {
@@ -50,7 +66,8 @@ html.inverted body {
 }
 
 html.inverted div#contrast,
-html.inverted div#invmode {
+html.inverted div#invmode,
+html.inverted div#serif {
     color: #fff;
     background-color: #000
 }
@@ -88,7 +105,8 @@ html.inverted.contrast body {
 }
 
 html.inverted.contrast div#contrast,
-html.inverted.contrast div#invmode {
+html.inverted.contrast div#invmode,
+html.inverted.contrast div#serif {
     color: #fff;
     background-color: #000
 }
@@ -248,6 +266,19 @@ blockquote:after {
     }
 }
 
+div#contrast {
+    color: #000;
+    top: 10px
+}
+
+div#serif {
+    color: #000;
+    top: 34px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.1;
+}
+
 span.visited {
     color: #941352
 }
@@ -268,11 +299,11 @@ div#contrast {
 }
 
 div#contrast,
-div#invmode {
+div#invmode,
+div#serif {
     cursor: pointer;
     position: absolute;
     right: 10px;
-    font-size: .8em;
     text-decoration: underline;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -284,7 +315,7 @@ div#invmode {
 div#invmode {
     color: #fff;
     background-color: #000;
-    top: 34px;
+    top: 56px;
     padding: 2px 5px
 }
 
@@ -333,17 +364,6 @@ span.sevsevnulnul2b:before {
 
 span.mfw {
     color: #730000
-}
-
-a.kopimi,
-a.kopimi img.kopimi {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-}
-
-a.kopimi img.kopimi {
-    height: 2em
 }
 
 p.fakepre {

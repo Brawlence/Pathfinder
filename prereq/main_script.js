@@ -1,12 +1,18 @@
 "use strict";
 
-var clickEvent = "ontouchstart" in window ? "touchend" : "click",
+var r = document.getElementById("rbw"),
+    currentHue = 0,
+    hueAddition = 5,
+    documentElement = document.getElementsByTagName("html")[0],
+    clickEvent = "ontouchstart" in window ? "touchend" : "click",
     classMethods = ["remove", "add"],
+    rainbowTiming = 1000 / 25,
     stringArray = [ "Добавить контраста",
                     "Убрать контраст",
                     "Ночной режим",
-                    "Обычный режим" ];
-
+                    "Обычный режим",
+                    "Добавить засечки",
+                    "Убрать засечки" ];
 function createControls() {
     var contrastDiv = document.createElement('div');
         contrastDiv.id = "contrast";
@@ -15,10 +21,24 @@ function createControls() {
     var nightmodeDiv = document.createElement('div');
         nightmodeDiv.id = "invmode";
         nightmodeDiv.innerText = stringArray[2];
+
+    var serifDiv = document.createElement('div');
+        serifDiv.id = "serif";
+        serifDiv.innerText = stringArray[4];
+
+    document.body.appendChild(serifDiv);
     document.body.appendChild(contrastDiv);
     document.body.appendChild(nightmodeDiv);
 }
 
+// Rainbow shifting text
+function doThatFuckingColorThing() {
+    var color = "hsl(" + currentHue + ", 80%, 60%)",
+        nextHue = currentHue + hueAddition;
+    currentHue = nextHue > 360 ? 0 : nextHue;
+    r.style.color = color;
+    setTimeout(doThatFuckingColorThing, rainbowTiming);
+}
 function someControl(id, textArr, className) {
     var el = document.getElementsByTagName("html")[0];
     var acbox = document.getElementById(id),
@@ -35,6 +55,10 @@ function someControl(id, textArr, className) {
     );
 }
 
+function addSerifControl() {
+    someControl("serif", [stringArray[4], stringArray[5]], "serif");
+}
+
 function addContrastControl() {
     someControl("contrast", [stringArray[0], stringArray[1]],"contrast");
 }
@@ -44,6 +68,10 @@ function addInvertedControl() {
 }
 
 createControls();
+if (localStorage.getItem('serif')==='true') {
+    document.getElementById('serif').firstChild.data = stringArray[5];
+    document.getElementsByTagName("html")[0].classList.add("serif");
+}
 if (localStorage.getItem('invmode')==='true') {
     document.getElementById('invmode').firstChild.data = stringArray[3];
     document.getElementsByTagName("html")[0].classList.add("inverted");
@@ -52,5 +80,7 @@ if (localStorage.getItem('contrast')==='true') {
     document.getElementById('contrast').firstChild.data = stringArray[1];
     document.getElementsByTagName("html")[0].classList.add("contrast");
 }
+doThatFuckingColorThing();
 addContrastControl();
 addInvertedControl();
+addSerifControl();
