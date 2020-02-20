@@ -6,23 +6,23 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #454545;
     font-size: 16px;
-    margin: 2em auto;
+    margin: 48px auto;
     max-width: 800px;
-    padding: 1em;
-    line-height: 1.4;
+    padding: 16px;
+    line-height: 1.6;
     text-align: justify
 }
 
 html.serif body {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    line-height: 1.1;
+    font-size: 19.1px;
+    line-height: 1.28;
 }
 
 html.serif div#serif {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 html.contrast body {
@@ -275,8 +275,8 @@ div#serif {
     color: #000;
     top: 34px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    line-height: 1.1;
+    font-size: 19.1px;
+    line-height: 1.28;
 }
 
 span.visited {
