@@ -1,6 +1,6 @@
 "use strict";
 
-var r = document.getElementById("rbw"),
+var rainbowClass = document.getElementsByClassName("rbw"),
     currentHue = 0,
     hueAddition = 5,
     documentElement = document.getElementsByTagName("html")[0],
@@ -36,7 +36,7 @@ function doThatFuckingColorThing() {
     var color = "hsl(" + currentHue + ", 80%, 60%)",
         nextHue = currentHue + hueAddition;
     currentHue = nextHue > 360 ? 0 : nextHue;
-    if (r) r.style.color = color;
+    if (rainbowClass) for (let item of rainbowClass) {item.style.color = color;} 
     setTimeout(doThatFuckingColorThing, rainbowTiming);
 }
 function someControl(id, textArr, className) {
