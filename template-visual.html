@@ -16,53 +16,52 @@
     <p class="st">Неплохо бы описать здесь всё произошедшее.</p>
     <h2>Заголововк второго уровня - H(eader)2 - допустим, "Персонажи"</h2>
     <p>Про то, как всё развивалось можно писать, расставляя <span class="mfw">дополнительные акценты</span>.</p>
-    <p>А этот класс - для тех случаев, когда кто-то <span class="wr">НЕПРАВ</span.</p> <h2>Ещё один заголовок H2 - для
-      красоты</h2>
-      <p>Вууу! Список:</p>
-      <ul>
+    <p>А этот класс - для тех случаев, когда кто-то <span class="wr">НЕПРАВ</span.</p>
+    <h2>Ещё один заголовок H2 - для красоты</h2>
+    <p>Вууу! Список:</p>
+    <ul>
         <li>Вероятно, это пункт перечня <a href="https://google.com/">со ссылкой на страницу гугла</a>.<small>Этот
             маленький текст тяжело читать</small></li>
         <li>Использованный шрифт — "Open Sans".<small>Загружается напрямую от гугла</small></li>
         <li>Его <i>можно</i> заставить <span class="colored" id="rbw" style="color: rgb(139, 71, 235);">переливаться
             цветом</span></li>
         <li>Ссылки не должны быть <span class="sb">грязно-синими</span> или же <span class="sv">грязно-фиолетовыми</span>, как хочет браузер. Это привычно, но <a href="http://www.colorhexa.com/0077aa">такой вот цвет</a> выглядит лучше</li>
-        </ul>
-        <h2>H2, третий:</h2>
-        <p>Почему нет?</p>
-        <ul>
-            <li>В списке можно вставлять маленькие картиночки <img src="./prereq/html5.svg" title="HTML5 Logo"> в формате SVG - векторная графика хорошо растягивается и сжимается без артефактов</li>
-            <li>Пункт списка внезапно заменяется на …
-                <p class="fakepre">моноширинный текст - прямо в пункте списка. Он обычно используется для кода. Надо придумать, подо что и как его ввернуть в нашем случае</p>
-            </li>
-        </ul>
-        <p>Ещё можно оформить цветовые штуки с помощью пред-символа: <span class="nulnul93aa">#0093aa</span>, <span class="sevsevnulnul2b">#77002b</span>.</p>
-        <h2>Картиночки! Обычные, не векторные</h2>
-        <div class="fancyPositioning">
-            <div class="picture-left">
-                <img src="./prereq/Agnes.gif" title="Набросок Агнес Лектер">
-                <p class="caption">Агнес. Весьма мила</p>
-            </div>
-            <div class="tleft">
-                <p>Картинка расположена слева от этого текста.</p>
-                <p>А сам текст форматируется справа от Агнес.</p>
-                <blockquote cite="@P_V_B"><span>У, у, и цитатки тоже добавить!</span>
-                    <author>Ася про эту страничку</author>
-                </blockquote>
-            </div>
+    </ul>
+    <h2>H2, третий:</h2>
+    <p>Почему нет?</p>
+    <ul>
+        <li>В списке можно вставлять маленькие картиночки <img src="./prereq/html5.svg" title="HTML5 Logo"> в формате SVG - векторная графика хорошо растягивается и сжимается без артефактов</li>
+        <li>Пункт списка внезапно заменяется на …
+            <p class="fakepre">моноширинный текст - прямо в пункте списка. Он обычно используется для кода. Надо придумать, подо что и как его ввернуть в нашем случае</p>
+        </li>
+    </ul>
+    <p>Ещё можно оформить цветовые штуки с помощью пред-символа: <span class="nulnul93aa">#0093aa</span>, <span class="sevsevnulnul2b">#77002b</span>.</p>
+    <h2>Картиночки! Обычные, не векторные</h2>
+    <div class="fancyPositioning">
+        <div class="picture-left">
+            <img src="./prereq/Agnes.gif" title="Набросок Агнес Лектер">
+            <p class="caption">Агнес. Весьма мила</p>
         </div>
-        <p>Сайт свиснут с the best motherfucking website, ибо у того лицензия <a href="http://www.wtfpl.net/">WTFPL</a>. <span class="citneed">Cit. needed</span></p>
-
-        <script>
-            var scriptSrc = [
-                "./prereq/main_script.js",
-            ];
-            for (var j = 0; j < scriptSrc.length; j++) {
-                var index = scriptSrc[j];
-                var script = document.body.appendChild(document.createElement('script'));
-                script.async = false;
-                script.src = index;
-            }
-        </script>
+        <div class="tleft">
+            <p>Картинка расположена слева от этого текста.</p>
+            <p>А сам текст форматируется справа от Агнес.</p>
+            <blockquote cite="@P_V_B"><span>У, у, и цитатки тоже добавить!</span>
+                <author>Ася про эту страничку</author>
+            </blockquote>
+        </div>
+    </div>
+    <p>Сайт свиснут с the best motherfucking website, ибо у того лицензия <a href="http://www.wtfpl.net/">WTFPL</a>. <span class="citneed">Cit. needed</span></p>
+    <script>
+        var scriptSrc = [
+            "./prereq/main_script.js",
+        ];
+        for (var j = 0; j < scriptSrc.length; j++) {
+            var index = scriptSrc[j];
+            var script = document.body.appendChild(document.createElement('script'));
+            script.async = false;
+            script.src = index;
+        }
+    </script>
 </body>
 
 </html>
