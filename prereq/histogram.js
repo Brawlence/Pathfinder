@@ -1,21 +1,16 @@
 const ROLLS = 10000;
 const CHARS = 10000;
 
-function histo(){
-    histogram = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    cost_histo = [];
-    cost_histo = cost_histo.fill(0);
-    diceSum = 0;
-    dice = [0,0,0,0];
-    maxVal = 0;
-    for (j=0;j<ROLLS;j++) {
-        for (i=0;i<4;i++) {
-            dice[i] = Math.floor(Math.random() * 6.0) + 1;
-        };
-        dice = dice.sort();
-        diceSum = dice[1]+dice[2]+dice[3]; 
-        histogram[diceSum] = histogram[diceSum]+1;
+function maxThreeFromFour() {
+    for (i=0;i<4;i++) {
+        dice[i] = Math.floor(Math.random() * 6.0) + 1;
     };
+    dice = dice.sort();
+    return dice[1]+dice[2]+dice[3];
+}
+
+function printHisto(histogram) {
+    maxVal = 0;
     for (v=0;v < histogram.length; v++) {
         maxVal = Math.max(maxVal,histogram[v]);
     };
@@ -55,21 +50,39 @@ function histo(){
         };
         console.log(v + spacer1 + " " + histogram_pres + spacer2 +  " " + tempstr);
     }
+}
+
+function histo(){
+    histogram = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    cost_histo = [];
+    cost_histo = cost_histo.fill(0);
+    diceSum = 0;
+    dice = [0,0,0,0];
+    for (j=0;j<ROLLS;j++) {
+        diceSum = maxThreeFromFour();
+        histogram[diceSum] = histogram[diceSum]+1;
+    };
+    printHisto(histogram);
+
     modi = [-5,-5,-4,-4,-3,-3,-2,-2,-1,-1,0,1,1,2,2,3,3,4,4]
     cost = [-4,-4,-4,-4,-4,-4,-4,-4,-2,-1,0,1,2,3,5,7,10,13,17];
     // если все характеристики =< 13, либо сумма модификаторов =< +3 - переброс
-
-    costSum = 0;
-    tempChara = [0,0,0,0,0,0];
-    validStats = false;
-    validMods = false;
+    
     for (i=0;i<CHARS;i++) {
+        tempChara = [10,10,10,10,10,10];
+        validMods = false;
+        validStats = false;
+        modiSum = 0;
+        costSum = 0;
         for (j=0;j<6;j++) {
-            tempChara[j] = costhistogram[Math.floor(Math.random() * ROLLS)];
+            tempChara[j] = maxThreeFromFour();
         };
         for (k=0;k<tempChara.length;k++) {
              if (tempChara[k] > 13) validStats = true;
+             modiSum = 
         };
+
         // valid by Modi?
+
     };
 }
