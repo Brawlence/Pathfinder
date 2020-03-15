@@ -1,8 +1,8 @@
 const ROLLS = 100000;
 const CHARS = 100000;
 const SCALE = 200;
-const modi = [-5,-5,-4,-4,-3,-3,-2,-2,-1,-1,0,1,1,2,2,3, 3, 4, 4];
-const cost = [-4,-4,-4,-4,-4,-4,-4,-4,-2,-1,0,1,2,3,5,7,10,13,17];
+const modi = [ -5, -5,-4,-4,-3,-3,-2,-2,-1,-1,0,1,1,2,2,3, 3, 4, 4];
+const cost = [-10,-10,-8,-8,-6,-6,-4,-4,-2,-1,0,1,2,3,5,7,10,13,17]; // значения стоимости покупки ниже -4 приблизительные — в таблице их не было
 
 function maxThreeFromFour() {
     dice = [0,0,0,0];
@@ -25,38 +25,12 @@ function printHisto(histogram) {
         if (v < 10) spacer1 = "  ";
         histogram_corr = histogram[v] * SCALE / maxVal;
         histogram_pres = (1.0 * histogram[v])/ROLLS;
-        switch (histogram_pres.toString().length) {
-            case 1:
-                spacer2 = "       ";
-                break;
-            case 2:
-                spacer2 = "      ";
-                break;
-            case 3:
-                spacer2 = "     ";
-                break;
-            case 4:
-                spacer2 = "    ";
-                break;
-            case 5:
-                spacer2 = "   ";
-                break;
-            case 6:
-                spacer2 = "  ";
-                break;
-            case 7:
-                spacer2 = " ";
-                break;
-            default:
-                spacer2 = " ";
-                break;
-        };
-        for (k=0;k<histogram_corr;k++) {
-            tempstr = tempstr + "*";
-        };
+        for (d = histogram_pres.toString().length; d < 10; d++ ) { spacer2 = spacer2 + " "; };
+        for (k=0;k<histogram_corr;k++) { tempstr = tempstr + "*"; };
         if (histogram_pres > 0) console.log(v + spacer1 + histogram_pres + spacer2 + tempstr);
-    }
+    };
 }
+
 
 function histo(){
     histogram = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
