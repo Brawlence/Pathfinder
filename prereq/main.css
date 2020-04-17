@@ -193,8 +193,10 @@ div.fancyPositioning div.tleft p:first-child {
     margin-top: 0
 }
 
-ul li img {
-    height: 1em
+ul li img,
+div#histoControl img {
+    height: 1em;
+    display: unset
 }
 
 blockquote {
@@ -280,7 +282,8 @@ div#contrast {
 
 div#contrast,
 div#invmode,
-div#serif {
+div#serif,
+div#histoControl {
     cursor: pointer;
     position: absolute;
     right: 10px;
