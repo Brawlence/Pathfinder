@@ -83,7 +83,7 @@ function histo(){
 function createHistoControl() {
     var histoDiv = document.createElement('div');
         histoDiv.id = "histoControl";
-        histoDiv.innerHTML = "<img src=\"./prereq/pi.svg\" onclick=\"histo();\" title=\"Гистограммка!\"></img>";
+        histoDiv.innerHTML = "<img src=\"./prereq/pi.svg\" class=\"bw\" onclick=\"histo();\" title=\"Гистограммка!\"></img>";
     document.body.appendChild(histoDiv);
 };
 
