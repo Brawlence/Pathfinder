@@ -2,7 +2,7 @@
 
 const ROLLS = 100000;
 const CHARS = 100000;
-const SCALE = 180;
+// const SCALE = 190;
 const modi = [ -5, -5,-4,-4,-3,-3,-2,-2,-1,-1,0,1,1,2,2,3, 3, 4, 4];
 const cost = [-10,-10,-8,-8,-6,-6,-4,-4,-2,-1,0,1,2,3,5,7,10,13,17]; // значения стоимости покупки ниже -4 приблизительные — в таблице их не было
 
@@ -16,6 +16,7 @@ function maxThreeFromFour() {
 }
 
 function printHisto(histogram) {
+    var SCALE = Math.floor(document.getElementById('histoControl').offsetLeft / 9) - 20;
     var output = "";
     var maxVal = 0;
     for (var v=0;v < histogram.length; v++) {
@@ -51,7 +52,7 @@ function histo(){
         for (var j = 0; j < ROLLS; j++) {
             histogram[maxThreeFromFour()]++;
         };
-        elderMagicField.value = "Stat distribution histogram:\n" + printHisto(histogram);
+        elderMagicField.value = "Stat distribution histogram:\n\n" + printHisto(histogram);
 
         // если все характеристики =< 13, либо сумма модификаторов =< +3 - переброс
     
@@ -74,7 +75,7 @@ function histo(){
                 costHistogram[costSum]++;
             };
         };
-        elderMagicField.value = elderMagicField.value + "Cost distribution histogram:\n" + printHisto(costHistogram);		
+        elderMagicField.value = elderMagicField.value + "\nCost distribution histogram:\n\n" + printHisto(costHistogram);		
 	} else {
 		document.getElementById('elderMagicField').parentElement.removeChild(document.getElementById('elderMagicField'));
 	}
