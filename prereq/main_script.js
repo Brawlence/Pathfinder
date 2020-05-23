@@ -3,7 +3,6 @@
 var rainbowClass = document.getElementsByClassName("rbw"),
     currentHue = 0,
     hueAddition = 5,
-    documentElement = document.getElementsByTagName("html")[0],
     clickEvent = "ontouchstart" in window ? "touchend" : "click",
     classMethods = ["remove", "add"],
     rainbowTiming = 1000 / 25,

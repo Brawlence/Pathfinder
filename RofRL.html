@@ -11,8 +11,10 @@
     <link rel="stylesheet" type="text/css" href="./prereq/fonts.css">
     <link rel="stylesheet" type="text/css" href="./prereq/main.css">
 </head>
+
 <body>
-<p><a href="index.html">На главную</a></p>
+<div id="ajaxable">
+<p><a class="ajax" href="index.html">На главную</a></p>
 <h1>Возвращение Рунных Владык</h1>
 Ведущий: Кирилл<br />
 Помощь мастеру: Вова<br />
@@ -190,10 +192,12 @@
 Кирилл: и вы понимаете следующее.. </br>
 Никита: в шкафу вы понимаете следующее.. *ржот*</br>
 
-<p><a href="index.html">На главную</a></p>
+<p><a class="ajax" href="index.html">На главную</a></p>
+</div>
     <script>
         var scriptSrc = [
-            "./prereq/main_script.js"
+            "./prereq/main_script.js",
+            "./prereq/ajax_links.js"
         ];
         for (let script of scriptSrc) {
             var scriptObj = document.body.appendChild(document.createElement('script'));

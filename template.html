@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <p><a href="index.html">На главную</a></p>
+<div id="ajaxable">
+    <p><a class="ajax" href="index.html">На главную</a></p>
     <h1>Итак, это <i>наши</i> похождения в Pathfinder.</h1>
     <p class="st">Неплохо бы описать здесь всё произошедшее.</p>
     <h2>Заголововк второго уровня - H(eader)2 - допустим, "Персонажи"</h2>
@@ -54,10 +55,12 @@
     </div>
     <p>Сайт свиснут с the best motherfucking website, ибо у того лицензия <a href="http://www.wtfpl.net/">WTFPL</a>. <span class="citneed">Cit. needed</span></p>
     
-    <p><a href="index.html">На главную</a></p>
+    <p><a class="ajax" href="index.html">На главную</a></p>
+</div>
     <script>
         var scriptSrc = [
             "./prereq/main_script.js",
+            "./prereq/ajax_links.js"
         ];
         for (var j = 0; j < scriptSrc.length; j++) {
             var index = scriptSrc[j];
