@@ -13,8 +13,8 @@
 </head>
 
 <body>
-<div id="ajaxable">
-    <p><a class="ajax" href="index.html">На главную</a></p>
+<div id="content">
+    <p><a class="local" href="index.html">На главную</a></p>
     <h1>Oписание персонажей</h1>
 
     <h2 id="table">Быстрая справка:</h2>
@@ -317,12 +317,11 @@
         - Слегка кокетка<br />
         - Из арбалета стреляет метко<br />
     </p>
-    <p><a class="ajax" href="index.html">На главную</a></p>
+    <p><a class="local" href="index.html">На главную</a></p>
 </div>
     <script>
         var scriptSrc = [
-            "./prereq/main_script.js",
-            "./prereq/ajax_links.js"
+            "./prereq/main_script.js"
         ];
         for (let script of scriptSrc) {
             var scriptObj = document.body.appendChild(document.createElement('script'));

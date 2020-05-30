@@ -13,8 +13,8 @@
 </head>
 
 <body>
-<div id="ajaxable">
-<p><a class="ajax" href="index.html">На главную</a></p>
+<div id="content">
+<p><a class="local" href="index.html">На главную</a></p>
 <h1>Подземелье Чёрного Клыка</h1>
 
 <h3 id="part1">Часть 1</h3>
@@ -31,12 +31,11 @@
 Персонажи: Эльён (Фил), Срунд (Вова), Арьёльд (Игорь), Ульман (Никита)<br />
 Механики: Стартовый набор, Вдохновение
 
-<p><a class="ajax" href="index.html">На главную</a></p>
+<p><a class="local" href="index.html">На главную</a></p>
 </div>
     <script>
         var scriptSrc = [
-            "./prereq/main_script.js",
-            "./prereq/ajax_links.js"
+            "./prereq/main_script.js"
         ];
         for (let script of scriptSrc) {
             var scriptObj = document.body.appendChild(document.createElement('script'));

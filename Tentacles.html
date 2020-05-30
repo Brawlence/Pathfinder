@@ -13,8 +13,8 @@
 </head>
 
 <body>
-<div id="ajaxable">
-<p><a class="ajax" href="index.html">На главную</a></p>
+<div id="content">
+<p><a class="local" href="index.html">На главную</a></p>
 <h1>Тентакли</h1>
 Ведущий: Настя<br />
 <h3 id="part1">Часть 1</h3>
@@ -24,12 +24,11 @@
 Персонажи: Андариель, Верта, Якен, Ычоль 
 
 
-<p><a class="ajax" href="index.html">На главную</a></p>
+<p><a class="local" href="index.html">На главную</a></p>
 </div>
     <script>
         var scriptSrc = [
-            "./prereq/main_script.js",
-            "./prereq/ajax_links.js"
+            "./prereq/main_script.js"
         ];
         for (let script of scriptSrc) {
             var scriptObj = document.body.appendChild(document.createElement('script'));
