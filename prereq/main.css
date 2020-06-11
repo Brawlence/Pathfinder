@@ -143,6 +143,14 @@ a:visited {
     color: #941352
 }
 
+a.anchor,
+html.contrast a.anchor,
+html.inverted a.anchor,
+html.contrast.inverted a.anchor {
+  color: currentColor;
+  text-decoration: none
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -161,8 +169,8 @@ small {
     font-size: .4em
 }
 
-p.st {
-    margin-top: -1em
+p.subheader {
+    margin-top: -0.8em;
 }
 
 div.fancyPositioning div.picture-left {
@@ -374,9 +382,9 @@ h2, h3 {
     border-bottom: 1px solid #a2a9b1;
 }
 
-h2:hover::after,
-h3:hover::after{
-    content: " 🔗 #"attr(id);
+h2:hover a.anchor::after,
+h3:hover a.anchor::after{
+    content: " 🔗 "attr(href);
     user-select: text;
     float: right
 }
