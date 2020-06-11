@@ -173,6 +173,11 @@ p.subheader {
     margin-top: -0.8em;
 }
 
+div.fancyPositioning {
+    display: inline-block;
+    margin-top: 1em;
+}
+
 div.fancyPositioning div.picture-left {
     float: left;
     width: 40%;
@@ -245,10 +250,6 @@ blockquote author:before {
         padding-top: 1em;
         width: 80%;
         margin-left: 15%
-    }
-    blockquote author:before {
-        content: "";
-        margin-right: inherit
     }
 }
 
